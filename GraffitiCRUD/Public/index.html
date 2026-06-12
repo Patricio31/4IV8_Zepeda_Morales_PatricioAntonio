@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 3 - Graffiti y MySQL</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mural de trabajo</h1>
+        <p>tema (Graffiti)</p>
+        <!-- Navegación por pestañas para cambiar entre secciones -->
+        <nav class="tabs">
+            <button class="tab active" onclick="cambiarSeccion('artistas')">Artistas</button>
+            <button class="tab" onclick="cambiarSeccion('estilos')">Estilos</button>
+            <button class="tab" onclick="cambiarSeccion('graffos')">Graffos</button>
+            <button class="tab" onclick="cambiarSeccion('obras')">Obras</button>
+        </nav>
+    </header>
+    <main>
+        <!-- Panel de estado de la API -->
+        <section class="info-api">
+            <h3>Estado de la API</h3>
+            <div class="api-status">
+                <span id="api-metodo" class="badge">-</span>
+                <span id="api-url" class="api-url">-</span>
+                <span id="api-codigo" class="badge badge-neutral">-</span>
+            </div>
+        </section>
+        <!-- ========================================================= -->
+        <!-- SECCIÓN: ARTISTAS -->
+        <!-- ========================================================= -->
+        <div id="seccion-artistas" class="seccion">
+            <section class="formulario-section">
+                <h2 id="form-titulo-artista">Agregar Artista Urbano</h2>
+                <form id="form-artista" novalidate>
+                    <input type="hidden" id="artista-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="artista-nombre">Nombre:</label>
+                            <input type="text" id="artista-nombre" placeholder="Ej: Jean-Michel Basquiat" maxlength="100" required>
+                            <span class="error" id="error-artista-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="artista-email">Email:</label>
+                            <input type="email" id="artista-email" placeholder="Ej: JMBasq@gmail.com" maxlength="100" required>
+                            <span class="error" id="error-artista-email"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="artista-descripcion">Descripcion:</label>
+                            <input type="text" id="artista-descripcion" placeholder="Ej:Artista americano de los años 60's" maxlength="255" required>
+                            <span class="error" id="error-artista-descripcion"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-artista">Guardar</button>
+                        <button type="button" id="btn-cancelar-artista" class="btn-secundario" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+            <section class="tabla-section">
+                <h2>artistas <span id="contador-artistas" class="badge badge-neutral"></span></h2>
+                <p id="carga-artistas">Cargando...</p>
+                <table id="tabla-artistas" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-artistas"></tbody>
+                </table>
+            </section>
+        </div>
+        <!-- ========================================================= -->
+        <!-- SECCIÓN: ESTILOS -->
+        <!-- ========================================================= -->
+        <div id="seccion-estilos" class="seccion" style="display:none;">
+
+            <section class="formulario-section">
+                <h2 id="form-titulo-estilo">Agregar Estilo</h2>
+                <form id="form-estilo" novalidate>
+                    <input type="hidden" id="estilo-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="estilo-nombre">Nombre del Estilo:</label>
+                            <input type="text" id="estilo-nombre" placeholder="Ej: Block Letters" maxlength="150" required>
+                            <span class="error" id="error-estilo-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="estilo-descripcion">Descripción:</label>
+                            <input type="text" id="estilo-descripcion" placeholder="Ej: Letras gruesas, cuadradas, rectas y muy legibles" maxlength="255" required>
+                            <span class="error" id="error-estilo-descripcion"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="estilo-origen">Origen / Época:</label>
+                            <input type="text" id="estilo-origen" placeholder="Ej: Tiene sus raíces en el Nueva York de la década de 1970" maxlength="100" required>
+                            <span class="error" id="error-estilo-origen"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-estilo">Guardar</button>
+                        <button type="button" id="btn-cancelar-estilo" class="btn-secundario" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>estilos <span id="contador-estilos" class="badge badge-neutral"></span></h2>
+                <p id="carga-estilos">Cargando...</p>
+                <table id="tabla-estilos" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Origen / Época</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-estilos"></tbody>
+                </table>
+            </section>
+        </div>
+        <!-- ========================================================= -->
+        <!-- SECCIÓN: GRAFFOS -->
+        <!-- ========================================================= -->
+        <div id="seccion-graffos" class="seccion" style="display:none;">
+
+            <section class="formulario-section">
+                <h2 id="form-titulo-graffos">Agregar Graffos</h2>
+                <form id="form-graffos" novalidate>
+                    <input type="hidden" id="graffos-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="graffos-nombre">Titulo:</label>
+                            <input type="text" id="graffos-nombre" placeholder="Ej: Obey Giant" maxlength="150" required>
+                            <span class="error" id="error-graffos-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="graffos-descripcion">Descripción:</label>
+                            <input type="text" id="graffos-descripcion" placeholder="Ej: Líneas geométricas y sombras duras" maxlength="255" required>
+                            <span class="error" id="error-graffos-descripcion"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="graffos-estilo">Estilo:</label>
+                            <select id="graffos-estilo" required>
+                                <option value="">-- Seleccionar --</option>
+                            </select>
+                            <span class="error" id="error-graffos-estilo"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="graffos-artista">Artista:</label>
+                            <select id="graffos-artista">
+                                <option value="">--Seleccionar artista--</option>
+                            </select>
+                            <span class="error" id="error-graffos-artista"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="graffos-portafolio">Portafolio:</label>
+                            <input type="text" id="graffos-portafolio" placeholder="Ingresa la url de tu portafolio" maxlength="255" required>
+                            <span class="error" id="error-graffos-portafolio"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-graffos">Guardar</button>
+                        <button type="button" id="btn-cancelar-graffos" class="btn-secundario" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>Graffos<span id="contador-graffos" class="badge badge-neutral"></span></h2>
+                <p id="carga-graffos">Cargando...</p>
+                <table id="tabla-graffos" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Artista</th>
+                            <th>Estilo</th>
+                            <th>Imagen</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-graffos"></tbody>
+                </table>
+            </section>
+        </div>
+        <!-- ========================================================= -->
+        <!-- SECCIÓN: OBRAS -->
+        <!-- ========================================================= -->
+        <div id="seccion-obras" class="seccion" style="display: none;">
+            <section class="tabla-section">
+                <h2>Galeria de Obras <span id="contador-obras" class="badge badge-neutral"></span></h2>
+                <p id="carga-obras">Cargando...</p>
+                <div id="galeria-obras" class="galeria"></div>
+            </section>
+        </div>
+        <!-- Notificaciones -->
+        <div id="notificacion" class="notificacion" style="display:none;"></div>
+    </main>
+
+    <footer>
+        <p>PNT tema (Graffo)</p>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+</html>

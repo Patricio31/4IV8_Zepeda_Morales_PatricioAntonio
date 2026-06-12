@@ -1,0 +1,160 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+:root {
+    --azul-oscuro: #22117B;
+    --rojo-vivo: #F51711;
+    --coral-rosado: #F54866;
+    --magenta: #FA0056;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --vino: #76174B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--blanco);
+    color: var(--negro);
+    line-height: 1.6;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-nav {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.container-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container-body section {
+    flex: 2;
+    min-width: 300px;
+    background-color: var(--rojo-vivo);
+    color: var(--blanco);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.container-body article {
+    flex: 2;
+    min-width: 300px;
+    background-color: var(--coral-rosado);
+    color: var(--blanco);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.container-body aside {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--magenta);
+    color: var(--blanco);
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.container-footer {
+    background-color: var(--vino);
+    color: var(--blanco);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+}
+
+footer a {
+    color: var(--blanco);
+    text-decoration: none;
+    border: 2px solid var(--blanco);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    background-color: var(--blanco);
+    color: var(--vino);
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .container-body {
+        flex-direction: column;
+    }
+=======
+*{
+    padding: 9px;
+    margin: 9px;
+    color: #000000;
+    text-align: center;
+}
+
+html, body{
+    background-color: #9ED3DC;
+}
+
+.container-main{
+    border: 7px solid rgb(36, 24, 149);
+    border-radius: 50px;
+    margin: 2rem;
+    background-color: #3852B4;
+}
+
+nav, section, footer, aside, article{
+    border: 4px solid #22117B;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+article, aside{
+    width: 40%;
+    display: inline-flex;
+    height: 300px;
+}
+
+nav, footer, section{
+    background-color: #7DAACB;
+>>>>>>> 6da914a114d4a1ec848df25cc7def213e1c36337
+}

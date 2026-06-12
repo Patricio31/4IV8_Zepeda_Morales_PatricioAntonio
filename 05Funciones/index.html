@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground ES6 - Razas de Perros</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-nav">
+            <header>
+                <nav>Consola Interactiva ES6: Métodos de Arreglos</nav>
+            </header>
+        </div>
+
+        <div class="container-body">
+            <section class="card-teoria">
+                <h2>Conceptos Clave ES6</h2>
+                <div class="grid-teoria">
+                    <div class="item-teoria">
+                        <strong>let & const</strong>
+                        <p>Sustituyen a var proporcionando un alcance de bloque protegido.</p>
+                    </div>
+                    <div class="item-teoria">
+                        <strong>Arrow Functions</strong>
+                        <p>Sintaxis más corta: <code>(args) => operación</code> sin generar su propio contexto.</p>
+                    </div>
+                </div>
+            </section>
+
+            <article class="card-interactiva">
+                <h2>Buscador y Modificador de Arreglos</h2>
+                <p class="instruccion">Usa los controles inferiores para simular las operaciones del script sobre la lista de razas de perros.</p>
+                
+                <div class="list-container">
+                    <h3>Lista Original de Razas:</h3>
+                    <ul id="lista-perros" class="dog-list">
+                        <li>Gran Danés</li>
+                        <li>Doberman</li>
+                        <li>Pastor Alemán</li>
+                        <li>Pitbull</li>
+                        <li>San Bernardo</li>
+                        <li>Xoloitzcuintle</li>
+                    </ul>
+                </div>
+
+                <div class="actions-panel">
+                    <button type="button" class="btn-primary" onclick="window.location.reload();">Reiniciar Lista</button>
+                    <button type="button" class="btn-accent" id="btn-evaluar">Ejecutar Verificación (find / push)</button>
+                </div>
+            </article>
+
+            <aside class="card-consola">
+                <h2>Salida de Consola</h2>
+                <div class="console-box">
+                    <pre id="console-output">Esperando ejecución del script...</pre>
+                </div>
+            </aside>
+        </div>
+
+        <div class="container-footer">
+            <footer>
+                <h2>Demostración de Javascript Moderno (ES6)</h2>
+                <a href="#">Documentación MDN Arreglos</a>
+            </footer>
+        </div>
+    </div>
+    <script src="./Funciones.js"></script>
+</body>
+</html>

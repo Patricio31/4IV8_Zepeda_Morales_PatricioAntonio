@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+:root {
+    --primary: #22117B;
+    --accent-red: #F51711;
+    --accent-coral: #F54866;
+    --accent-magenta: #FA0056;
+    --accent-wine: #76174B;
+    --bg-light: #FFFFFF;
+    --bg-card: #F9F9F9;
+    --text-dark: #000000;
+    --border-color: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.Ejercicio1 {
+    background-color: var(--bg-card);
+    border-top: 6px solid var(--primary);
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 4px 20px rgba(34, 17, 123, 0.1);
+}
+
+label {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.container-table {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.table tr td:first-child {
+    color: var(--text-dark);
+    width: 60%;
+}
+
+.table tr td:last-child {
+    width: 40%;
+}
+
+input[type="text"] {
+    font-family: 'Jacques François', serif;
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+input[readonly] {
+    background-color: #EFEFEF;
+    border-color: var(--border-color);
+    color: var(--accent-wine);
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+input[type="button"] {
+    font-family: 'Jacques François', serif;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+input[name="enviar"] {
+    background-color: var(--accent-wine);
+    color: var(--bg-light);
+}
+
+input[name="enviar"]:hover {
+    background-color: var(--primary);
+}
+
+input[name="Delete"] {
+    background-color: transparent;
+    color: var(--accent-coral);
+    border: 2px solid var(--accent-coral);
+}
+
+input[name="Delete"]:hover {
+    background-color: var(--accent-coral);
+    color: var(--bg-light);
+}
+
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+    .table tr, .table td {
+        display: block;
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    .table td {
+        padding: 8px 0;
+    }
+}

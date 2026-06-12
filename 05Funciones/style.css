@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+:root {
+    --bg-main: #FFFFFF;
+    --text-main: #000000;
+    --primary: #22117B;
+    --primary-light: #F54866;
+    --accent: #FA0056;
+    --accent-dark: #76174B;
+    --card-bg: #F9F9F9;
+    --console-bg: #1E1E24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-nav {
+    background-color: var(--primary);
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-light);
+}
+
+nav {
+    color: var(--bg-main);
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.container-body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.card-teoria, .card-interactiva, .card-consola {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-teoria {
+    grid-column: 1 / 3;
+    border-top: 4px solid var(--primary-light);
+}
+
+.grid-teoria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.item-teoria strong {
+    color: var(--accent-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.item-teoria code {
+    font-family: monospace;
+    background: #EAEAEA;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.card-interactiva {
+    grid-column: 1 / 2;
+    border-left: 5px solid var(--primary);
+}
+
+.instruccion {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.dog-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 25px 0;
+}
+
+.dog-list li {
+    background-color: var(--primary);
+    color: var(--bg-main);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.actions-panel {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    font-family: 'Jacques François', serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: var(--primary-light);
+    border: 2px solid var(--primary-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    color: var(--bg-main);
+}
+
+.btn-accent {
+    background-color: var(--accent-dark);
+    color: var(--bg-main);
+}
+
+.btn-accent:hover {
+    background-color: var(--primary);
+}
+
+.card-consola {
+    grid-column: 2 / 3;
+    background-color: var(--console-bg);
+    color: #A4A4A4;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-consola h2 {
+    color: var(--bg-main);
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.console-box pre {
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    color: #4AF626;
+}
+
+.container-footer {
+    background-color: var(--accent-dark);
+    color: var(--bg-main);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    color: var(--bg-main);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: var(--bg-main);
+    text-decoration: none;
+    border: 1px solid var(--bg-main);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+footer a:hover {
+    background-color: var(--bg-main);
+    color: var(--accent-dark);
+}
+
+@media (max-width: 850px) {
+    .container-body {
+        grid-template-columns: 1fr;
+    }
+    .card-teoria, .card-interactiva, .card-consola {
+        grid-column: 1 / 2;
+    }
+    .grid-teoria {
+        grid-template-columns: 1fr;
+    }
+}

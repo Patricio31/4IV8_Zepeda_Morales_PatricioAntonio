@@ -1,0 +1,136 @@
+/* Importar la tipografía Jacques François desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+/* Variables basadas en la paleta de colores de la imagen */
+:root {
+    --azul-oscuro: #22117B;
+    --rojo-vivo: #F51711;
+    --coral: #F54866;
+    --rosa-mexicano: #FA0056;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --guinda-ipn: #76174B;
+    --gris-fondo: #f4f4f9;
+}
+
+/* Configuración General */
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--gris-fondo);
+    color: var(--negro);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor Principal */
+.conteiner {
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta del Formulario y Texto */
+.form-container {
+    background-color: var(--blanco);
+    border-top: 8px solid var(--guinda-ipn);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+/* Estilo para los párrafos informativos */
+.form-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Estructura del Formulario */
+form {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* Etiquetas (Labels) */
+label {
+    display: block;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Campos de entrada (Inputs de texto, número y email) */
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto Focus al escribir */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    border-color: var(--coral);
+    outline: none;
+}
+
+/* Contenedor o espacio para los botones */
+input[type="submit"],
+input[type="reset"] {
+    font-family: 'Jacques François', serif;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Botón Enviar (Utiliza el Rosa Mexicano/Rojo de la paleta) */
+input[type="submit"] {
+    background-color: var(--rosa-mexicano);
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--rojo-vivo);
+}
+
+/* Botón Borrar (Gris oscuro/Negro suave) */
+input[type="reset"] {
+    background-color: #666;
+    color: var(--blanco);
+}
+
+input[type="reset"]:hover {
+    background-color: var(--negro);
+}
+
+/* Animación simple al presionar botones */
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.98);
+}

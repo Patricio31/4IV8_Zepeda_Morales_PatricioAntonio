@@ -1,0 +1,182 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+:root {
+    --azul-oscuro: #22117B;
+    --rojo-vivo: #F51711;
+    --rosa-mexicano: #FA0056;
+    --blanco: #FFFFFF;
+    --guinda-ipn: #76174B;
+    --gris-fondo: #f4f4f4;
+}
+
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--gris-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#form {
+    background-color: var(--blanco);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid var(--guinda-ipn); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--azul-oscuro);
+    margin-bottom: 25px;
+}
+
+.grupo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Jacques François', serif;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+input:focus {
+    border-color: var(--rosa-mexicano);
+    outline: none;
+}
+
+.barra {
+    display: none;
+}
+
+button[type="submit"] {
+    font-family: 'Jacques François', serif;
+    background-color: var(--rosa-mexicano);
+    color: var(--blanco);
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--rojo-vivo);
+}
+
+.warnings {
+    color: var(--rojo-vivo);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+:root {
+    --azul-oscuro: #22117B;
+    --rojo-vivo: #F51711;
+    --rosa-mexicano: #FA0056;
+    --blanco: #FFFFFF;
+    --guinda-ipn: #76174B;
+    --gris-fondo: #f4f4f4;
+}
+
+body {
+    font-family: 'Jacques François', serif;
+    background-color: var(--gris-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#form {
+    background-color: var(--blanco);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid var(--guinda-ipn); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--azul-oscuro);
+    margin-bottom: 25px;
+}
+
+.grupo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Jacques François', serif;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+input:focus {
+    border-color: var(--rosa-mexicano);
+    outline: none;
+}
+
+.barra {
+    display: none;
+}
+
+button[type="submit"] {
+    font-family: 'Jacques François', serif;
+    background-color: var(--rosa-mexicano);
+    color: var(--blanco);
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--rojo-vivo);
+}
+
+.warnings {
+    color: var(--rojo-vivo);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+>>>>>>> 6da914a114d4a1ec848df25cc7def213e1c36337
+}
